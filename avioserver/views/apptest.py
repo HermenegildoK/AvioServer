@@ -8,12 +8,12 @@ apptest_controllers = Blueprint("apptest", __name__)
 
 @apptest_controllers.route('/test/connections/<int:connection_id>', methods=["GET"])
 def connections_get(connection_id):
-    print(f'connection {connection_id} started')
+    print('connection {connection_id} started'.format(connection_id=connection_id))
     sleep(2)
-    print(f'connection {connection_id} done')
+    print('connection {connection_id} done'.format(connection_id=connection_id))
     return ok_response(
         {
-            "message": f"Hello {connection_id}"
+            "message": "Hello {connection_id}".format(connection_id=connection_id)
         }
     )
 
@@ -22,7 +22,7 @@ def connections_get(connection_id):
 def connections_post(connection_id):
     return ok_response(
         {
-            "message": f"Hello {connection_id}",
+            "message": "Hello {connection_id}".format(connection_id=connection_id),
             "received_data": request.json
         }
     )
