@@ -5,3 +5,4 @@ Start of project
 
  - basic project structure
  - added gunicorn example
+ - added basic pwm class
